@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Blog Python</h1>
+        </div>
+            <div class="'bar">
+                <ul class="bar_items">
+                    <li>Login</li>
+                    <li><a href="/contacto">Contacto</a></li>
+                </ul>   
+            </div>
+    </header>
+    <main>
+        <div>
+            <h2>Entradas del blog:</h2>
+        </div>
+        {% if posts %}
+            {% for post in posts %}
+                <div>
+                    <h4>Autor del post: {{ post.autor }}</h4>
+                    <p>{{ post.texto }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Por el momento no hay post</p>
+        {% endif %}
+    </main>
+    <footer>
+        Relizado por {{ nombre }}
+    </footer>
+</body>
+</html>
