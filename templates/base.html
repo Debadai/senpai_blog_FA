@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Velocidad y Altura</h1>
+        </div>
+        <div class="bar">
+            <ul class="bar_items">
+                <li><a href="/">Home</a></li>
+                {% if 'username' in session %}
+                    <li><a href="/profile">Mi Perfil</a></li>
+                {% else %}
+                    <li><a href="/login">Login</a></li>
+                {% endif %}
+                <li><a href="/post">Crear nuevo post</a></li>
+                <li><a href="/contact">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>Blog proyecto de Senpai</p>
+        <p>Federico Acerenza</p>
+        <p>2024</p>
+    </footer>
+</body>
+</html>
+
+

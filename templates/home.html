@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "base.html" %}
+
+{% block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
     <title>Home</title>
-</head>
-<body>
-    <header>
-        <div>
-            <h1>Blog Python</h1>
-        </div>
-            <div class="'bar">
-                <ul class="bar_items">
-                    <li>Login</li>
-                    <li><a href="/contacto">Contacto</a></li>
-                </ul>   
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h2>Últimas noticias y artículos del mundo de la aviación</h2>
+        <!-- Formulario de búsqueda -->
+        <form action="/" method="get">
+            <input type="text" name="search" placeholder="Buscar posteos..." value="{{ request.args.get('search', '') }}">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post-preview">
+                <a href="/post/{{ post.id }}">
+                    <h4>{{ post.title }}</h4>
+                </a>
+                <p>{{ post.content | truncate(150) }}</p> <!-- Muestra una vista previa del contenido limitando a 150 caracteres -->
             </div>
-    </header>
-    <main>
-        <div>
-            <h2>Entradas del blog:</h2>
-        </div>
-        {% if posts %}
-            {% for post in posts %}
-                <div>
-                    <h4>Autor del post: {{ post.autor }}</h4>
-                    <p>{{ post.texto }}</p>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>Por el momento no hay post</p>
-        {% endif %}
-    </main>
-    <footer>
-        Relizado por {{ nombre }}
-    </footer>
-</body>
-</html>
+        {% endfor %}
+    {% else %}
+        <p>Por el momento no hay posts para visualizar :(</p>
+    {% endif %}
+{% endblock %}

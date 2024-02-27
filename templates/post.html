@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>{% if post %}{{ post.title }}{% else %}Crear Post{% endif %}</title>
+{% endblock %}
+
+{% block main %}
+    {% if post %}
+        <!-- Mostrar un post existente -->
+        <div>
+            <h2>{{ post.title }}</h2>
+            <p><strong>Autor:</strong> {{ post.author }}</p>
+            <p>{{ post.content }}</p>
+            <a href="/">Volver atrás</a>
+        </div>
+    {% else %}
+        <!-- Formulario para crear un nuevo post -->
+        <form action="/post" method="post">
+            <div>
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+            </div>
+            <div>
+                <label for="contenido">Contenido:</label>
+                <textarea id="contenido" name="contenido" required></textarea>
+            </div>
+            <button type="submit">Publicar</button>
+        </form>
+        {% if error %}
+            <p style="color:red;">{{ error }}</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}

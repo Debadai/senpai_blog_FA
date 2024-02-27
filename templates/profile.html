@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Perfil</title>
+{% endblock %}
+
+{% block main %}
+<p>Bienvenido {{ username }}!</p>
+<form action="{{ url_for('logout') }}" method="post">
+    <button type="submit" class="logout-button">Cerrar sesión</button>
+</form>
+{% endblock %}

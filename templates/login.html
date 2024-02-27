@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Login</title>
+{% endblock %}
+
+{% block main %}
+    <h3>Inicie sesión:</h3>
+    <form action="/login" method="post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <p style="color: red;">{{ error }}</p>
+
+    <p>No tienes usuario? <a href="/register">Haz click aquí para registrarte</a></p>
+{% endblock %}
