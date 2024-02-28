@@ -1,27 +1,128 @@
+/* Estilos generales */
+body {
+    background-color: #e3f2fd;
+    background-image: 
+        radial-gradient(circle, rgba(227, 242, 253, 0) 40%, #e3f2fd 70%), 
+        url('/static/images/image6.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Encabezado */
+header {
+    background-color: #e3f2fd;
+    padding: 20px 0;
+    border-bottom: 2px solid #0277bd;
+}
+
 h1 {
-    color: cadetblue;
-    font-size: 60px;
+    color: #4e5e67;
+    font-size: 4.0em;
     text-align: center;
+    font-style: italic;
+    margin: 0;
 }
 
-h2 {
-    text-align: center;
-}
-
+/* Barra de navegación */
 .bar {
-    border-bottom: solid 1px;
-    margin-bottom: 50 px;
+    background-color: #4e5e67; 
+    padding: 10px 0;
 }
 
 .bar_items {
     display: flex;
     justify-content: space-around;
+    list-style: none;
+    padding: 0;
 }
 
+.bar_items li a {
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.bar_items li a:hover {
+    background-color: #01579b;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+}
+
+/* Previsualización de posts */
+.post-preview {
+    background-color: #e3f2fd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.post-preview h4 {
+    margin: 0 0 10px;
+}
+
+.post-preview p {
+    margin: 0;
+}
+
+/* Pie de página */
 footer {
+    background-color: #4e5e67;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
-    text-align: center;
-    line-height: 0.5;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Formularios */
+form {
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #0277bd;
+    border-radius: 5px;
+}
+
+input[type="submit"],
+button {
+    background-color: #0277bd;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #01579b;
+}
+
+/* Respuestas de error en formularios */
+p[style="color: red;"] {
+    color: #d32f2f;
 }
