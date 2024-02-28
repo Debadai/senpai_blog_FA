@@ -41,15 +41,15 @@ def insert(query, params):
 @app.route('/')
 def home():
     """
-    Renderiza la home. Si hay posteos en la tabla posts, trae los últimos 5 por defecto ordenados del más reciente al más viejo.
+    Renderiza la home. Si hay posteos en la tabla posts, los muestra ordenados segun la fecha de creacion.
     """
     titulo_busqueda = request.args.get('search')
     if titulo_busqueda:
-        query = "SELECT * FROM posts WHERE posts.title LIKE ? ORDER BY created DESC LIMIT 5"
+        query = "SELECT * FROM posts WHERE posts.title LIKE ? ORDER BY created DESC"
         params = (f"%{titulo_busqueda}%",)
         posts = query_all(query, params)
     else:
-        posts = query_all("SELECT * FROM posts ORDER BY created DESC LIMIT 5")
+        posts = query_all("SELECT * FROM posts ORDER BY created DESC")
     return render_template("home.html", posts=posts)
 
 @app.route('/contact')

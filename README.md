@@ -1,11 +1,31 @@
-# Blog de aeronautica
+# Blog de Aeronáutica
 
-Este blog es un proyecto del curso de Python de la academia Senpai.
+## Introducción
+Este blog es un proyecto desarrollado como parte del curso de Python ofrecido por la Academia Senpai. Está dedicado a entusiastas de la aeronáutica, permitiendo a los usuarios registrarse y compartir publicaciones relacionadas con esta tematica.
 
-Se trata de un blog de tematica aeronautica en el cual los usuarios pueden registrarse y agregar publicaciones sobre dicha tematica.
+## Características
+- Registro e inicio de sesión de usuarios.
+- Creación y visualización de publicaciones sobre aeronáutica.
 
-La logica de la aplicacion corre en Flask y el frontend son paginas en HTML y CSS.
+## Tecnologías Utilizadas
+- **Backend**: Flask (Framework de Python)
+- **Frontend**: HTML y CSS
+- **Base de datos**: SQLite
 
-En el archivo requirments.txt se encuentran las dependencias que son necesarias instalar para que la aplicacion se ejecute correctamente.
+## Instalación
+Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
 
-El archivo .gitignore ignora la ejecucion del entorno virtual de desarollo y el archivo que inicia la base de datos (ya que el archivo .db es parte de los archivos de la aplicacion).
+1. Clonar el repositorio a tu máquina local.
+2. Asegurarse de tener Python instalado y configurar un entorno virtual.
+3. Instalar las dependencias necesarias con `pip install -r requirements.txt`.
+4. Ejecuta el servidor Flask con `python main.py`
+
+## Uso
+Una vez que el servidor esté en funcionamiento:
+- Navegar a `http://localhost:5000` en tu navegador para acceder al blog.
+- Registrarse para crear una cuenta de usuario.
+- Iniciar sesión para comenzar a crear y visualizar publicaciones.
+
+## Créditos
+Este proyecto fue desarrollado por Federico Acerenza, con agradecimiento al prof. del curso Joaquin Zuazo, muchas gracias por la buena onda.
+
